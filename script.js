@@ -3,7 +3,7 @@ function GetInfo() {
     let cityName = document.getElementById("cityName");
     /*cityName.innerHTML = "--"+newName.value+"--";*/
 
-fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=36788483b47d720325bce837edf2a1a8')
+fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=...')
 .then(response => response.json())
 .then(data => {
     for(i = 0; i<5; i++){
