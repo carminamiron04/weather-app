@@ -1,9 +1,8 @@
 function GetInfo() {
     let newName = document.getElementById("cityInput");
     let cityName = document.getElementById("cityName");
-    /*cityName.innerHTML = "--"+newName.value+"--";*/
 
-fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=...')
+fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=36788483b47d720325bce837edf2a1a8')
 .then(response => response.json())
 .then(data => {
     for(i = 0; i<5; i++){
@@ -15,6 +14,7 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appi
      for(i = 0; i<5; i++){
         document.getElementById("img" + (i+1)).src = "http://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+".png";
     }
+    localStorage.setItem('weatherData', JSON.stringify(data));
     console.log(data)
 })
 
@@ -39,5 +39,5 @@ function CheckDay(day){
 }
 
     for(i = 0; i<5; i++){
-        document.getElementById("day" + (i+1)).innerHTML = weekday[CheckDay(i)];
+        document.getElementById("day" + (i+1)).innerHTML = weekday[CheckDay(i+4)];
     }
