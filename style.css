@@ -37,6 +37,15 @@ button {
     color: white;
 }
 
+.btn {
+    display: inline-block;
+    border-radius: 30px;
+    font-size: 20px;
+    width: 170px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
 #cityInput, #cityName, #inputContainer{
     margin: 3px;
     border-radius: 50px;
